@@ -5,30 +5,38 @@ for i in range(n):
     inlist.append(int(input()))
 mainlist=[i+1 for i in range(a)]
 
-def findlower(num):
-    p = addlist.index(num)
-    try:
-        if p-1<0:
-            raise IndexError
-        return addlist[p - 1] + 1
-    except IndexError:
+def findlower(num,actualnum):
+    d_num=actualnum
+    if num in addlist:
+        if num==d_num:
+            pass
+        else:
+            return num+1
+    if mainlist.index(num)==0:
         return 1
+    num-=1
+    return findlower(num,d_num)
 
-def findupper(num):
-    p=addlist.index(num)
-    try:
-        return addlist[p + 1] - 1
-    except IndexError:
+def findupper(num,actualnum):
+    d_num=actualnum
+    if num in addlist:
+        if num==d_num:
+            pass
+        else:
+            return num-1
+    if mainlist.index(num)==a-1:
         return a
-
+    num+=1
+    return findupper(num,d_num)
 
 for i in inlist:
     sum = 0
     addlist.append(i)
-    addlist.sort()
+
     for j in addlist:
-        lower=findlower(j)
-        upper=findupper(j)
+        lower=findlower(j,j)
+        upper=findupper(j,j)
         sum+=lower+upper
         print('[',lower,upper,']',end=" ")
     print(sum)
+
