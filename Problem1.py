@@ -3,7 +3,6 @@ inlist=[]
 addlist=[]
 for i in range(n):
     inlist.append(int(input()))
-mainlist=[i+1 for i in range(a)]
 
 def findlower(num,actualnum):
     d_num=actualnum
@@ -39,4 +38,7 @@ for i in inlist:
         sum+=lower+upper
         print('[',lower,upper,']',end=" ")
     print(sum)
+<<<<<<< HEAD
 
+=======
+>>>>>>> b1c6e75eb2ccd033e930e448e5c191c5f10c325b
