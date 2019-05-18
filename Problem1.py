@@ -3,6 +3,7 @@ inlist=[]
 addlist=[]
 for i in range(n):
     inlist.append(int(input()))
+mainlist=[i+1 for i in range(a)]
 
 def findlower(num,actualnum):
     d_num=actualnum
